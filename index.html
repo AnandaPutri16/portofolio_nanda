@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio website for Ananda Putri Isnaeni, a Fresh Graduate in Information Systems."
+    />
+    <title>Ananda Putri Isnaeni | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blush: '#f8d9df',
+              rose: '#f2b7c6',
+              dusty: '#d99aa9',
+              cream: '#fffaf7',
+              ivory: '#f8f1ee',
+              beige: '#eadbcf',
+              brown: '#3d2d2b',
+              charcoal: '#4c4a4e',
+              gold: '#d6b984'
+            },
+            boxShadow: {
+              soft: '0 20px 45px rgba(191, 122, 143, 0.12)',
+              glass: '0 20px 60px rgba(255, 255, 255, 0.35)'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="ambient-backdrop" id="ambient-backdrop" data-scene="hero" aria-hidden="true">
+      <div class="ambient-wash"></div>
+      <div class="ambient-blob ambient-blob-rose" data-depth="1.2"></div>
+      <div class="ambient-blob ambient-blob-ivory" data-depth="0.7"></div>
+      <div class="ambient-ribbon ambient-ribbon-one" data-depth="0.45"></div>
+      <div class="ambient-ribbon ambient-ribbon-two" data-depth="0.3"></div>
+      <div class="ambient-mark" data-depth="0.6"></div>
+      <div class="ambient-three" id="ambient-three"></div>
+      <div class="ambient-particles" id="ambient-particles"></div>
+    </div>
+    <div class="cursor cursor-dot" aria-hidden="true"></div>
+    <div class="cursor cursor-ring" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="logo" aria-label="Ananda Putri Isnaeni, home">
+          <img src="assets/images/logo-transparent.png" alt="" aria-hidden="true" />
+        </a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#organizations">Organizations</a>
+          <a href="#contact">Contact</a>
+          <a
+            href="assets/cv/CV-ATS-Ananda-Putri-Isnaeni.pdf"
+            class="btn btn-primary nav-cv"
+            download
+          >
+            Download CV
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero section-shell">
+        <div class="hero-glow glow-one"></div>
+        <div class="hero-glow glow-two"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-up">
+            <p class="eyebrow">HELLO, I'M ANANDA PUTRI ISNAENI♡</p>
+            <h1>
+              Menciptakan Solusi Digital<br />
+              <span>Melalui Teknologi &amp; Kreativitas.</span>
+            </h1>
+            <p class="lead">
+              Fresh Graduate Sistem Informasi yang memiliki ketertarikan pada Web
+              Development, UI/UX Design, System Analysis, Data Analysis, dan
+              pengembangan solusi digital.
+            </p>
+
+            <div class="cta-group">
+              <a href="#projects" class="btn btn-primary">
+                Explore My Work <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="assets/cv/CV-ATS-Ananda-Putri-Isnaeni.pdf" class="btn btn-secondary" download>
+                Download CV <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+
+            <div class="floating-tags" aria-label="Highlights">
+              <span>Information Systems Graduate</span>
+              <span>Creative × Analytical</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal-up">
+            <div id="hero-3d" class="hero-3d" aria-label="Decorative 3D orb"></div>
+            <div class="fallback-orb" aria-hidden="true"></div>
+            <div class="profile-stage">
+              <div class="profile-frame">
+                <img src="assets/images/profile/nanda1.jpeg" alt="Ananda Putri Isnaeni" />
+              </div>
+            </div>
+            <div class="scroll-note">SCROLL TO EXPLORE ↓</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section-shell about-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">01 — ABOUT ME</span>
+            <h2>A little about me ♡</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy reveal-up">
+              <p class="statement">Memadukan Teknologi, Analisis, dan Kreativitas.</p>
+              <p>
+                Saya merupakan Fresh Graduate Sistem Informasi yang memiliki
+                ketertarikan dalam pengembangan website, UI/UX Design, analisis
+                sistem, pengolahan data, dan pengembangan solusi digital. Saya
+                senang mengubah kebutuhan pengguna menjadi sistem yang terstruktur,
+                fungsional, dan mudah digunakan.
+              </p>
+              <div class="decorative-words" aria-label="Personal qualities">
+                <span>curious mind</span>
+                <span>creative soul</span>
+                <span>tech enthusiast</span>
+              </div>
+            </div>
+
+            <div class="about-image reveal-up">
+              <div class="image-card soft-frame about-art" role="img" aria-label="Decorative pink creative technology workspace with a laptop, floating glass orb, pearls, and data visualizations">
+                <div id="about-3d" class="about-3d" aria-hidden="true"></div>
+                <div class="about-fallback" aria-hidden="true">
+                  <span class="art-blob art-blob-one"></span>
+                  <span class="art-blob art-blob-two"></span>
+                  <span class="art-ring art-ring-one"></span>
+                  <span class="art-ring art-ring-two"></span>
+                  <span class="art-orb"></span>
+                  <span class="art-pearl pearl-one"></span>
+                  <span class="art-pearl pearl-two"></span>
+                  <span class="art-pearl pearl-three"></span>
+                  <span class="art-pearl pearl-four"></span>
+                  <span class="art-flower"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                  <span class="art-sparkle sparkle-one">✦</span>
+                  <span class="art-sparkle sparkle-two">✧</span>
+                  <span class="art-sparkle sparkle-three">✦</span>
+                  <span class="art-heart heart-one">♡</span>
+                  <span class="art-heart heart-two">♡</span>
+                  <div class="art-laptop">
+                    <div class="art-screen">
+                      <div class="art-screen-top"><i></i><i></i><i></i><span></span></div>
+                      <div class="art-screen-layout">
+                        <div class="art-chart-card"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                        <div class="art-data-card"><i></i><i></i><i></i></div>
+                        <div class="art-code-card"><i></i><i></i><i></i></div>
+                      </div>
+                    </div>
+                    <div class="art-keyboard"><span></span></div>
+                  </div>
+                </div>
+                <div class="about-labels" aria-hidden="true">
+                  <span class="art-label label-creative">creative × analytical</span>
+                  <span class="art-label label-design">design + technology</span>
+                  <span class="art-label label-ideas">ideas into systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid reveal-up">
+            <article class="stat-card" data-target="1" data-suffix="+">
+              <strong>01+</strong>
+              <span>Internship Experience</span>
+            </article>
+            <article class="stat-card" data-target="4" data-suffix="+">
+              <strong>04+</strong>
+              <span>Selected Projects</span>
+            </article>
+            <article class="stat-card" data-target="2" data-suffix="+">
+              <strong>02+</strong>
+              <span>Professional Certifications</span>
+            </article>
+            <article class="stat-card" data-target="6" data-suffix="+">
+              <strong>06+</strong>
+              <span>Organizational Experiences</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section-shell skills-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">02 — SKILLS</span>
+            <h2>Things I love working with ♡</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card reveal-up">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="fa-solid fa-code"></i></span>
+                <h3>Web Development</h3>
+              </div>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal-up">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+                <h3>Database &amp; Data</h3>
+              </div>
+              <ul>
+                <li>MySQL</li>
+                <li>SQL</li>
+                <li>Python</li>
+                <li>Microsoft Excel</li>
+                <li>Data Analysis</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal-up">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></span>
+                <h3>UI / UX</h3>
+              </div>
+              <ul>
+                <li>UI Design</li>
+                <li>UX Design</li>
+                <li>Responsive Web Design</li>
+              </ul>
+            </article>
+
+            <article class="skill-card reveal-up">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                <h3>System Analysis</h3>
+              </div>
+              <ul>
+                <li>UML</li>
+                <li>System Analysis</li>
+                <li>Data Mining</li>
+                <li>CRISP-DM</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section-shell experience-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">03 — EXPERIENCE</span>
+            <h2>Where I learned by doing.</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item reveal-up">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-top">
+                  <div>
+                    <h3>Dinas Sosial Kota Bogor</h3>
+                    <p class="role">IT / Data Administration Intern</p>
+                  </div>
+                  <span class="period">February 2025 — June 2025</span>
+                </div>
+
+                <p>
+                  Berperan dalam pengelolaan data sosial, validasi dan verifikasi data, pengarsipan dokumen, penyusunan laporan administrasi, serta pengembangan sistem informasi berbasis web.
+                </p>
+
+                <ul class="responsibilities">
+                  <li>Validasi dan verifikasi data sosial</li>
+                  <li>Pengelolaan data administrasi</li>
+                  <li>Pengarsipan dokumen</li>
+                  <li>Penyusunan laporan administrasi</li>
+                  <li>Penggunaan sistem informasi dalam pengelolaan data</li>
+                  <li>Pengembangan Sistem Informasi Anak Terlantar</li>
+                </ul>
+
+                <div class="stack-tags">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Tailwind CSS</span>
+                  <span>Chart.js</span>
+                </div>
+              </div>
+
+              <div class="timeline-image soft-frame">
+                <img src="assets/images/organization/dinas-sosial2.jpg" alt="Dinas Sosial Kota Bogor" />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECT -->
+      <section class="section-shell featured-project">
+        <div class="container featured-wrap reveal-up">
+          <div class="featured-copy">
+            <span class="label">04 — FEATURED PROJECT</span>
+            <h2>Sistem Informasi Anak Terlantar</h2>
+            <p class="subhead">Web-Based Data Management &amp; Visualization</p>
+            <p>
+              Sistem informasi berbasis web yang dikembangkan untuk membantu
+              pengelolaan dan visualisasi data anak terlantar sehingga informasi dapat
+              disajikan secara lebih terstruktur dan mudah dipahami.
+            </p>
+            <div class="stack-tags large">
+              <span>Laravel</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Tailwind CSS</span>
+              <span>Chart.js</span>
+            </div>
+          </div>
+
+          <div class="browser-mockup ">
+            <div class="browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-body">
+              <img src="assets/images/projects/anak-terlantar-1.jpg" alt="System dashboard preview" />
+              <img src="assets/images/projects/anak-terlantar-2.jpg" alt="System report preview" />
+            </div>
+            <div class="browser-actions">
+              <a href="#projects" class="btn btn-primary">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#projects" class="btn btn-secondary">Project Gallery <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section-shell projects-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">05 — PROJECTS</span>
+            <h2>A few things I've created ♡</h2>
+          </div>
+
+          <div class="project-gallery">
+            <article class="project-card reveal-up">
+              <div class="project-image soft-frame">
+                <img src="assets/images/projects/anak-terlantar-1.jpg" alt="Sistem Informasi Anak Terlantar" />
+              </div>
+              <div class="project-content">
+                <h3>SISTEM INFORMASI ANAK TERLANTAR</h3>
+                <p>Web-based data management and visualization system.</p>
+                <div class="stack-tags">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Tailwind CSS</span>
+                  <span>Chart.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="#projects">Project</a>
+                  <a href="#projects">Gallery</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up">
+              <div class="project-image soft-frame">
+                <img src="assets/images/projects/rtlh.jpg" alt="Sistem Rekomendasi RTLH" />
+              </div>
+              <div class="project-content">
+                <h3>SISTEM REKOMENDASI RTLH</h3>
+                <p>Recommendation system using K-Nearest Neighbor to help determine renovation priorities for Rumah Tidak Layak Huni.</p>
+                <div class="stack-tags">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>KNN</span>
+                </div>
+                <div class="project-links">
+                  <a href="#projects">Project</a>
+                  <a href="#projects">Gallery</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up">
+              <div class="project-image soft-frame">
+                <img src="assets/images/projects/beautybloom.jpg" alt="BeautyBloom web concept" />
+              </div>
+              <div class="project-content">
+                <h3>BEAUTYBLOOM WEB</h3>
+                <p>Modern feminine beauty website concept combining aesthetic UI and interactive web elements.</p>
+                <div class="stack-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="#projects">Project</a>
+                  <a href="#projects">Gallery</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up">
+              <div class="project-image soft-frame">
+                <img src="assets/images/projects/portfolio.jpg" alt="Personal portfolio" />
+              </div>
+              <div class="project-content">
+                <h3>PERSONAL PORTFOLIO</h3>
+                <p>Interactive personal portfolio.</p>
+                <div class="stack-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Tailwind CSS</span>
+                  <span>Three.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="#projects">Project</a>
+                  <a href="#projects">Gallery</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section id="certificates" class="section-shell certificates-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">06 — CERTIFICATES</span>
+            <h2>Always learning, always growing ♡</h2>
+          </div>
+
+          <div class="certificate-grid">
+            <article class="certificate-card reveal-up" aria-label="Cisco CCNA: Introduction to Networks certificate">
+              <iframe class="certificate-preview" src="assets/images/certificates/sertifikat_cisco.pdf#toolbar=0&navpanes=0&view=FitH" title="Cisco CCNA: Introduction to Networks certificate" loading="lazy"></iframe>
+              <div class="certificate-info">
+                <h3>Cisco CCNA: Introduction to Networks</h3>
+                <p>Menyelesaikan pelatihan dasar jaringan komputer melalui Cisco Networking Academy.</p>
+                <a href="assets/images/certificates/sertifikat_cisco.pdf" target="_blank" rel="noopener">Buka sertifikat PDF</a>
+              </div>
+            </article>
+
+            <article class="certificate-card reveal-up lightbox-trigger" data-lightbox="assets/images/certificates/Sertifikat_Magang.jpeg" tabindex="0" role="button" aria-label="Open Dinas Sosial Kota Bogor internship certificate">
+              <img src="assets/images/certificates/Sertifikat_Magang.jpeg" alt="Sertifikat magang Dinas Sosial Kota Bogor" />
+              <div class="certificate-info">
+                <h3>Sertifikat Magang — Dinas Sosial Kota Bogor</h3>
+                <p>Menuntaskan program magang administrasi dan pengelolaan data pada Februari–Juni 2025.</p>
+              </div>
+            </article>
+
+            <article class="certificate-card reveal-up lightbox-trigger" data-lightbox="assets/images/certificates/sertifikat_english.jpg" tabindex="0" role="button" aria-label="Open English conversation certificate">
+              <img src="assets/images/certificates/sertifikat_english.jpg" alt="English Conversation Verbal Test certificate" />
+              <div class="certificate-info">
+                <h3>English Conversation Verbal Test</h3>
+                <p>Menyelesaikan tes percakapan verbal untuk melatih komunikasi dan kepercayaan diri berbahasa Inggris.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORGANIZATIONS -->
+      <section id="organizations" class="section-shell organizations-section">
+        <div class="container">
+          <div class="section-heading reveal-up">
+            <span class="label">07 — ORGANIZATIONS &amp; ACTIVITIES</span>
+            <h2>My journey beyond the classroom.</h2>
+          </div>
+
+          <div class="organization-grid">
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/bem.jpg" tabindex="0" role="button" aria-label="Open BEM organization image">
+              <img src="assets/images/organization/bem.jpg" alt="BEM organization photo" />
+              <figcaption>
+                <strong>BEM</strong>
+                <span>Divisi Komunikasi dan Informasi</span>
+              </figcaption>
+            </figure>
+
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/pob.jpg" tabindex="0" role="button" aria-label="Open POB organization image">
+              <img src="assets/images/organization/pob.jpg" alt="POB FEB 2025 photo" />
+              <figcaption>
+                <strong>POB FEB 2025</strong>
+                <span>Divisi Dokumentasi</span>
+              </figcaption>
+            </figure>
+
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/makrab.jpg" tabindex="0" role="button" aria-label="Open Makrab activity image">
+              <img src="assets/images/organization/makrab.jpg" alt="Makrab October 2024 activity" />
+              <figcaption>
+                <strong>Makrab — Oktober 2024</strong>
+                <span>Divisi Acara</span>
+              </figcaption>
+            </figure>
+
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/mubes.jpg" tabindex="0" role="button" aria-label="Open Mubes organization image">
+              <img src="assets/images/organization/mubes.jpg" alt="Mubes BEM September 2024" />
+              <figcaption>
+                <strong>Mubes BEM — September 2024</strong>
+                <span>Divisi Acara</span>
+              </figcaption>
+            </figure>
+
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/artwave.jpg" tabindex="0" role="button" aria-label="Open Artwave organization image">
+              <img src="assets/images/organization/artwave.jpg" alt="Artwave December 2024" />
+              <figcaption>
+                <strong>Artwave — Desember 2024</strong>
+                <span>Divisi Dokumentasi</span>
+              </figcaption>
+            </figure>
+
+            <figure class="org-card reveal-up lightbox-trigger" data-lightbox="assets/images/organization/dinas-sosial.jpg" tabindex="0" role="button" aria-label="Open Dinas Sosial internship experience image">
+              <img src="assets/images/organization/dinas-sosial.jpg" alt="Dinas Sosial Kota Bogor internship experience" />
+              <figcaption>
+                <strong>Dinas Sosial Kota Bogor</strong>
+                <span>IT / Data Administration Intern</span>
+                <p>
+                Pengelolaan dan validasi data sosial, administrasi, serta pengembangan sistem informasi dan visualisasi data berbasis web.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- STRENGTHS -->
+      <section class="section-shell strengths-section">
+        <div class="container strengths-wrap reveal-up">
+          <p class="strength-tag">EVERY DETAIL MATTERS.</p>
+          <p class="strength-sub">Setiap detail berarti.<br />Setiap pengalaman membentuk saya.</p>
+          <div class="strong-list">
+            <span>Problem Solving</span>
+            <span>Analytical Thinking</span>
+            <span>Attention to Detail</span>
+            <span>Fast Learner</span>
+            <span>Adaptability</span>
+            <span>Teamwork</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section-shell contact-section">
+        <div class="container contact-wrap reveal-up">
+          <div class="contact-copy">
+            <span class="label">08 — LET'S CONNECT ♡</span>
+            <h2>Let's create something meaningful.</h2>
+            <p>
+              Saya terbuka terhadap peluang di bidang Web Development, UI/UX Design,
+              System Analysis, Data Analysis, IT Support, maupun pekerjaan administrasi
+              yang berhubungan dengan teknologi.
+            </p>
+
+            <div class="contact-list">
+              <a href="mailto:anandaputriisnaeni0116@gmail.com" class="contact-card">
+                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                <span class="contact-text">
+                  <strong>Email</strong>
+                  <small>anandaputriisnaeni0116@gmail.com</small>
+                </span>
+              </a>
+
+              <a href="https://wa.me/6289614302665" class="contact-card" target="_blank" rel="noopener">
+                <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="contact-text">
+                  <strong>WhatsApp</strong>
+                  <small>089614302665</small>
+                </span>
+              </a>
+
+              <a href="https://github.com/AnandaPutri16" class="contact-card" target="_blank" rel="noopener">
+                <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                <span class="contact-text">
+                  <strong>GitHub</strong>
+                  <small>https://github.com/AnandaPutri16</small>
+                </span>
+              </a>
+            </div>
+
+            <div class="cta-group contact-cta">
+              <a href="assets/cv/CV-ATS-Ananda-Putri-Isnaeni.pdf" class="btn btn-primary" download>
+                Download CV <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-visual">
+            <div id="contact-3d" class="contact-3d" aria-label="Decorative contact 3D object"></div>
+            <div class="contact-fallback" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo" aria-label="Ananda Putri Isnaeni, home">
+            <img src="assets/images/logo-transparent.png" alt="" aria-hidden="true" />
+          </a>
+          <p>Fresh Graduate Sistem Informasi · Creative &amp; Analytical</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:anandaputriisnaeni0116@gmail.com">Email</a>
+          <a href="https://wa.me/6289614302665" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://github.com/AnandaPutri16" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Ananda Putri Isnaeni</p>
+        <p>designed with ♡ by nanda</p>
+      </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close image viewer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="Zoomed portfolio image" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
