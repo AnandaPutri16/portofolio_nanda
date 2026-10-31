@@ -1,0 +1,212 @@
+.certificates-page .certificate-page-section {
+  padding-top: 3.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.certificates-page .certificate-back-button {
+  display: inline-flex;
+  min-height: 44px;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+}
+
+.certificates-page .certificate-page-heading {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
+.certificates-page-title {
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+}
+
+.certificates-page .certificate-page-subtitle {
+  color: var(--dusty);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+}
+
+.certificates-page .certificate-page-description {
+  max-width: 72ch;
+  margin-top: 0.35rem;
+  color: rgba(61, 45, 43, 0.78);
+  font-size: 0.95rem;
+}
+
+.certificates-page .certificate-grid {
+  align-items: stretch;
+}
+
+.certificates-page .certificate-card {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.certificates-page .certificate-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.42;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: #fff;
+}
+
+.certificates-page button.certificate-media {
+  cursor: zoom-in;
+}
+
+.certificates-page .certificate-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.certificates-page .certificate-card:hover .certificate-media img,
+.certificates-page .certificate-media:focus-visible img {
+  transform: scale(1.035);
+}
+
+.certificates-page .certificate-pdf-media iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+  pointer-events: none;
+}
+
+.certificates-page .certificate-pdf-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #fff;
+  background: rgba(61, 45, 43, 0);
+  font-size: 1.7rem;
+  opacity: 0;
+  cursor: zoom-in;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.certificates-page .certificate-pdf-media:hover .certificate-pdf-overlay,
+.certificates-page .certificate-pdf-overlay:focus-visible {
+  background: rgba(61, 45, 43, 0.24);
+  opacity: 1;
+}
+
+.certificates-page .certificate-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.certificates-page .certificate-info h3 {
+  margin-bottom: 0.45rem;
+}
+
+.certificates-page .certificate-issuer,
+.certificates-page .certificate-date {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.certificates-page .certificate-issuer {
+  color: rgba(61, 45, 43, 0.8);
+  font-weight: 600;
+}
+
+.certificates-page .certificate-date {
+  color: #a7657d;
+}
+
+.certificates-page .certificate-description {
+  margin-top: 0.75rem;
+}
+
+.certificates-page .certificate-open-trigger {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.certificates-page .certificate-open-trigger.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(202, 164, 175, 0.3);
+  border-radius: 999px;
+  color: var(--brown);
+  background: rgba(255, 255, 255, 0.5);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.certificates-page .certificate-open-trigger.btn:hover,
+.certificates-page .certificate-open-trigger.btn:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 24px rgba(185, 130, 148, 0.16);
+}
+
+.certificates-page .certificate-load-more-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.certificates-page #load-more-certificates {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+
+.certificates-page .certificate-count {
+  color: rgba(61, 45, 43, 0.7);
+  font-size: 0.78rem;
+}
+
+.certificates-page .certificate-pdf-lightbox {
+  width: min(92vw, 1100px);
+  height: min(86vh, 780px);
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.2);
+}
+
+.certificates-page .lightbox-close {
+  z-index: 1;
+}
+
+.certificates-page [hidden] {
+  display: none !important;
+}
+
+.certificates-page .site-nav a[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certificates-page .certificate-card,
+  .certificates-page .certificate-media img,
+  .certificates-page .certificate-open-trigger.btn,
+  .certificates-page .certificate-pdf-overlay {
+    animation: none;
+    transition: none;
+  }
+}

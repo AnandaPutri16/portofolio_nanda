@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.querySelector('.scroll-progress');
   const revealItems = document.querySelectorAll('.reveal-up');
   const statCards = document.querySelectorAll('.stat-card');
+  const statsGrid = document.querySelector('.stats-grid');
   const projectCards = document.querySelectorAll('.project-card');
   const skillCards = document.querySelectorAll('.skill-card');
   const lightbox = document.getElementById('lightbox');
@@ -140,50 +141,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 
-  const animateNumbers = () => {
-    statCards.forEach((card) => {
-      const target = Number(card.dataset.target || 0);
-      const suffix = card.dataset.suffix || '';
-      const valueEl = card.querySelector('strong');
-      const duration = 1200;
-      const start = performance.now();
+  const getStatCount = (card) => {
+    if (card.dataset.countSource === 'certificates') {
+      return window.portfolioCertificates?.length || 0;
+    }
 
-      const step = (time) => {
-        const progress = Math.min((time - start) / duration, 1);
-        const current = Math.floor(progress * target);
-        valueEl.textContent = `${current}${suffix}`;
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          valueEl.textContent = `${target}${suffix}`;
-        }
-      };
+    const selector = card.dataset.countSelector;
+    if (!selector) return 0;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              requestAnimationFrame(step);
-              observer.unobserve(card);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      observer.observe(card);
-    });
+    return [...document.querySelectorAll(selector)].filter((item) => {
+      const style = window.getComputedStyle(item);
+      return !item.closest('[hidden], [aria-hidden="true"]')
+        && style.display !== 'none'
+        && style.visibility !== 'hidden'
+        && item.getClientRects().length > 0;
+    }).length;
   };
 
-  if (!reducedMotion) {
-    animateNumbers();
-  } else {
+  const animateStat = (card) => {
+    const target = getStatCount(card);
+    const valueEl = card.querySelector('strong');
+    const duration = 1800;
+    const start = performance.now();
+
+    const step = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const easedProgress = 1 - (1 - progress) ** 3;
+      valueEl.textContent = String(Math.floor(easedProgress * target));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        valueEl.textContent = String(target);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  if (reducedMotion) {
     statCards.forEach((card) => {
-      const target = Number(card.dataset.target || 0);
-      const suffix = card.dataset.suffix || '';
-      const valueEl = card.querySelector('strong');
-      valueEl.textContent = `${target}${suffix}`;
+      card.querySelector('strong').textContent = String(getStatCount(card));
     });
+  } else if (statsGrid) {
+    const statObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            statCards.forEach(animateStat);
+            observer.unobserve(statsGrid);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statObserver.observe(statsGrid);
   }
 
   if (menuToggle) {
