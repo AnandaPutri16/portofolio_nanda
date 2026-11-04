@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Memorable moments from Ananda Putri Isnaeni's academic journey, organizational experiences, events, and activities."
+    />
+    <title>My Gallery | Ananda Putri Isnaeni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gallery-page.css" />
+  </head>
+  <body class="gallery-page">
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="ambient-backdrop" id="ambient-backdrop" data-scene="gallery" aria-hidden="true">
+      <div class="ambient-wash"></div>
+      <div class="ambient-blob ambient-blob-rose" data-depth="1.2"></div>
+      <div class="ambient-blob ambient-blob-ivory" data-depth="0.7"></div>
+      <div class="ambient-ribbon ambient-ribbon-one" data-depth="0.45"></div>
+      <div class="ambient-ribbon ambient-ribbon-two" data-depth="0.3"></div>
+      <div class="ambient-mark" data-depth="0.6"></div>
+      <div class="ambient-three" id="ambient-three"></div>
+      <div class="ambient-particles" id="ambient-particles"></div>
+    </div>
+    <div class="cursor cursor-dot" aria-hidden="true"></div>
+    <div class="cursor cursor-ring" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html#home" class="logo" aria-label="Ananda Putri Isnaeni, home">
+          <img src="assets/images/logo-transparent.png" alt="" aria-hidden="true" />
+        </a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#organizations">Organizations</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="gallery.html" aria-current="page">My Gallery</a>
+          <a href="index.html#contact">Contact</a>
+          <a
+            href="assets/cv/CV-ATS-Ananda-Putri-Isnaeni.pdf"
+            class="btn btn-primary nav-cv"
+            download
+          >
+            Download CV
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="gallery" class="section-shell gallery-page-section">
+        <div class="container">
+          <a href="index.html#organizations" class="btn btn-secondary gallery-back-button">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Home
+          </a>
+
+          <div class="section-heading gallery-page-heading reveal-up">
+            <span class="label">04 — ORGANIZATIONS &amp; ACTIVITIES</span>
+            <h1 class="gallery-page-title">My Gallery</h1>
+            <p class="gallery-page-subtitle">Capturing Moments, Creating Memories.</p>
+            <p class="gallery-page-description">
+              Here are some memorable moments from my academic journey, organizational experiences, events, and various activities. Each photo represents a valuable experience, collaboration, and opportunity to learn and grow.
+            </p>
+          </div>
+
+          <div class="gallery-controls reveal-up">
+            <label for="gallery-filter">Filter activities</label>
+            <select id="gallery-filter">
+              <option value="all">All activities</option>
+            </select>
+            <p id="gallery-count" class="gallery-count" aria-live="polite"></p>
+          </div>
+
+          <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+
+          <div class="gallery-load-more-wrap">
+            <button id="gallery-load-more" class="btn btn-secondary" type="button">
+              Load More <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html#home" class="logo footer-logo" aria-label="Ananda Putri Isnaeni, home">
+            <img src="assets/images/logo-transparent.png" alt="" aria-hidden="true" />
+          </a>
+          <p>Fresh Graduate Sistem Informasi · Creative &amp; Analytical</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:anandaputriisnaeni0116@gmail.com" aria-label="Email" title="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/6289614302665" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/AnandaPutri16" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ananda-putri-isnaeni-964a29268" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Ananda Putri Isnaeni</p>
+        <p>designed with ♡ by nanda</p>
+      </div>
+    </footer>
+
+    <div
+      id="lightbox"
+      class="lightbox gallery-lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gallery-lightbox-title"
+    >
+      <div class="gallery-lightbox-panel">
+        <button class="lightbox-close" type="button" aria-label="Close image viewer">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <button id="gallery-previous" class="gallery-lightbox-nav gallery-lightbox-previous" type="button" aria-label="Previous photo">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <img id="gallery-lightbox-image" src="" alt="" />
+        <button id="gallery-next" class="gallery-lightbox-nav gallery-lightbox-next" type="button" aria-label="Next photo">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <div class="gallery-lightbox-caption">
+          <p id="gallery-lightbox-meta" class="gallery-lightbox-meta"></p>
+          <h2 id="gallery-lightbox-title"></h2>
+          <p id="gallery-lightbox-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/gallery-data.js"></script>
+    <script src="js/gallery-page.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

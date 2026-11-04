@@ -1,5 +1,14 @@
 window.portfolioCertificates = [
   {
+    title: 'Sertifikat Kompetensi Pemrogram Junior',
+    issuer: 'BNSP melalui Lembaga Sertifikasi Profesi Entrepreneur Digital Indonesia',
+    issuedAt: '2026-09-22',
+    dateLabel: '22 September 2026',
+    description: 'Sertifikat kompetensi sebagai Pemrogram Junior pada bidang Pengembangan Perangkat Lunak - Pemrograman.',
+    asset: 'assets/images/certificates/Sertifikat BNSP.jpeg',
+    type: 'image'
+  },
+  {
     title: 'English Conversation Verbal Test',
     issuer: 'FINKOM UNBIN x MAXY Academy',
     issuedAt: '2026-08-01',
