@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     button.type = 'button';
     button.dataset.asset = certificate.asset;
     button.dataset.assetType = certificate.type;
-    button.setAttribute('aria-label', `Lihat sertifikat: ${certificate.title}`);
+    button.setAttribute('aria-label', `Open certificate: ${certificate.title}`);
 
     const icon = document.createElement('i');
     icon.className = 'fa-solid fa-arrow-up-right-from-square';
     icon.setAttribute('aria-hidden', 'true');
-    button.append(icon, document.createTextNode(' Lihat Sertifikat'));
+    button.append(icon, document.createTextNode(' View Certificate'));
     return button;
   };
 
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       openButton.type = 'button';
       openButton.dataset.asset = certificate.asset;
       openButton.dataset.assetType = certificate.type;
-      openButton.setAttribute('aria-label', `Lihat preview: ${certificate.title}`);
+      openButton.setAttribute('aria-label', `Open preview: ${certificate.title}`);
       const icon = document.createElement('i');
       icon.className = 'fa-solid fa-up-right-and-down-left-from-center';
       icon.setAttribute('aria-hidden', 'true');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.type = 'button';
     button.dataset.asset = certificate.asset;
     button.dataset.assetType = certificate.type;
-    button.setAttribute('aria-label', `Lihat preview: ${certificate.title}`);
+    button.setAttribute('aria-label', `Open preview: ${certificate.title}`);
 
     const image = document.createElement('img');
     image.src = certificate.asset;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     grid.appendChild(fragment);
     visibleCount += nextCertificates.length;
-    count.textContent = `Menampilkan ${visibleCount} dari ${certificates.length} sertifikat`;
+    count.textContent = `Showing ${visibleCount} of ${certificates.length} certificates`;
     loadMoreButton.hidden = visibleCount >= certificates.length;
   };
 
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxPdf.src = '';
       lightboxImage.hidden = false;
       lightboxImage.src = asset;
-      lightboxImage.alt = trigger.getAttribute('aria-label').replace(/^(Lihat preview|Lihat sertifikat): /, '');
+      lightboxImage.alt = trigger.getAttribute('aria-label').replace(/^(Open preview|Open certificate): /, '');
     }
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
