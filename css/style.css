@@ -550,8 +550,7 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .typing-text::after,
-  .hero-rotating-text::after {
+  .typing-text::after {
     display: none;
     animation: none;
   }
@@ -2137,6 +2136,10 @@ footer.site-footer > .container {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .hero-rotating-text::after {
+    animation: typing-cursor-blink 0.8s steps(2, start) infinite !important;
   }
 
   .reveal-up {

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const heroRotatingText = document.querySelector('.hero-rotating-text');
-  if (heroRotatingText && !reducedMotion) {
+  if (heroRotatingText) {
     const phrases = [
       'Aspiring Front-End Developer',
       'UI/UX Designer',
