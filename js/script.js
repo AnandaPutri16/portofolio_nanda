@@ -178,8 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     heroRotatingText.setAttribute('aria-label', phrases[phraseIndex]);
     heroRotatingText.setAttribute('aria-live', 'off');
-    characterIndex = phrases[phraseIndex].length;
-    window.setTimeout(deletePhrase, 1800);
+    characterIndex = 0;
+    heroRotatingText.textContent = '';
+    window.setTimeout(typePhrase, 350);
   }
 
   const updateHeaderState = () => {
