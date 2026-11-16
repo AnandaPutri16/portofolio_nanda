@@ -513,10 +513,48 @@ p {
   color: var(--dusty);
 }
 
+.hero h1 .hero-rotating-text {
+  display: block;
+  min-height: 2.1em;
+  color: inherit;
+}
+
 .lead {
   max-width: 620px;
   font-size: 1.08rem;
   color: rgba(61, 45, 43, 0.82);
+}
+
+.typing-text::after {
+  content: '';
+  display: inline-block;
+  height: 1em;
+  margin-left: 3px;
+  border-left: 2px solid currentColor;
+  vertical-align: -0.12em;
+  animation: typing-cursor-blink 0.8s steps(2, start) infinite;
+}
+
+.hero-rotating-text::after {
+  content: '';
+  display: inline-block;
+  height: 0.9em;
+  margin-left: 4px;
+  border-left: 3px solid currentColor;
+  vertical-align: -0.06em;
+  animation: typing-cursor-blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes typing-cursor-blink {
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-text::after,
+  .hero-rotating-text::after {
+    display: none;
+    animation: none;
+  }
 }
 
 .cta-group {

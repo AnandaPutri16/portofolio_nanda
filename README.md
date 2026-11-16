@@ -40,25 +40,19 @@ Replace any of the following files with your own project images:
 - `beautybloom.jpg`
 - `portfolio.jpg`
 
-## 4. Add or update certificates
+## 4. Replace certificate images
 
-Certificate files are stored in `assets/images/certificates/`. The Home statistics and `My Certificates` page share the `portfolioCertificates` catalog in `js/certificates-data.js`.
+Certificates are inside:
 
-To add a certificate, place its original image or PDF in that folder and add a matching catalog entry with its title, issuer, date, description, asset path, and file type. Use `issuedAt: null` and an honest `dateLabel` when the date is not available; entries without a date appear after dated certificates. Use `type: 'image'` for image files and `type: 'pdf'` for PDF files.
+- `assets/images/certificates/`
 
-The current catalog contains:
+Available files:
 
-- `Sertifikat_Magang.jpeg`
-- `sertifikat_cisco.pdf`
-- `sertifikat_data_analis.jpeg`
-- `sertifikat_data_science.jpeg`
-- `sertifikat_engineering_resilience.jpeg`
-- `sertifikat_english.jpg`
-- `sertifikat_graphic_design.jpeg`
-- `sertifikat_keamanan_sistem.jpeg`
-- `sertifikat_uiux.jpeg`
+- `certificate-1.jpg`
+- `certificate-2.jpg`
+- `certificate-3.jpg`
 
-The generated `certificate-1.jpg`, `certificate-2.jpg`, and `certificate-3.jpg` files are placeholders and are intentionally excluded from the certificate catalog.
+Replace them with your own certificate images or update the labels in `index.html` if needed.
 
 ## 5. Replace organization images
 

@@ -113,6 +113,75 @@ document.addEventListener('DOMContentLoaded', () => {
   createAmbientParticles();
   initializeAmbientInteractions();
 
+  const typingText = document.querySelector('.typing-text');
+  if (typingText && !reducedMotion) {
+    const fullText = typingText.textContent;
+    typingText.setAttribute('aria-label', fullText);
+    typingText.setAttribute('aria-live', 'off');
+    let characterIndex = 0;
+
+    const typeNextCharacter = () => {
+      characterIndex += 1;
+      typingText.textContent = fullText.slice(0, characterIndex);
+
+      if (characterIndex < fullText.length) {
+        window.setTimeout(typeNextCharacter, 95);
+      } else {
+        window.setTimeout(() => {
+          characterIndex = 0;
+          typingText.textContent = '';
+          window.setTimeout(typeNextCharacter, 850);
+        }, 2600);
+      }
+    };
+
+    typingText.textContent = '';
+    window.setTimeout(typeNextCharacter, 350);
+  }
+
+  const heroRotatingText = document.querySelector('.hero-rotating-text');
+  if (heroRotatingText && !reducedMotion) {
+    const phrases = [
+      'Aspiring Front-End Developer',
+      'UI/UX Designer',
+      'IT & Administrative Support'
+    ];
+    const typeDelay = 95;
+    const deleteDelay = 55;
+    let phraseIndex = 0;
+    let characterIndex = 0;
+
+    const typePhrase = () => {
+      const phrase = phrases[phraseIndex];
+      characterIndex += 1;
+      heroRotatingText.textContent = phrase.slice(0, characterIndex);
+
+      if (characterIndex < phrase.length) {
+        window.setTimeout(typePhrase, typeDelay);
+      } else {
+        window.setTimeout(deletePhrase, 1800);
+      }
+    };
+
+    const deletePhrase = () => {
+      characterIndex -= 1;
+      heroRotatingText.textContent = phrases[phraseIndex].slice(0, characterIndex);
+
+      if (characterIndex > 0) {
+        window.setTimeout(deletePhrase, deleteDelay);
+      } else {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        heroRotatingText.setAttribute('aria-label', phrases[phraseIndex]);
+        window.setTimeout(typePhrase, 350);
+      }
+    };
+
+    heroRotatingText.setAttribute('aria-label', phrases[phraseIndex]);
+    heroRotatingText.setAttribute('aria-live', 'off');
+    characterIndex = phrases[phraseIndex].length;
+    window.setTimeout(deletePhrase, 1800);
+  }
+
   const updateHeaderState = () => {
     if (window.scrollY > 20) {
       header.classList.add('scrolled');
